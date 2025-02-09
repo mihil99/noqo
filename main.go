@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	expr := core.Function{
 		Name: "f",
 		Args: []core.Expr{
@@ -19,6 +18,21 @@ func main() {
 			},
 		},
 	}
+	fmt.Println("Expression: ", expr.String())
 
-	fmt.Println(expr.String())
+	head := core.CreateFunction("swap",
+		core.CreateFunction("pair",
+			core.CreateSymbol("x"),
+			core.CreateSymbol("y")))
+
+	body := core.CreateFunction("pair",
+		core.CreateSymbol("y"),
+		core.CreateSymbol("x"))
+
+	rule := core.Rule{
+		Head: head,
+		Body: body,
+	}
+
+	fmt.Println("Rule: ", rule.String())
 }

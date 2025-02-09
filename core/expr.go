@@ -51,3 +51,11 @@ func (f Function) Type() ExprType {
 func (s Symbol) Type() ExprType {
 	return Sym
 }
+
+func CreateFunction(name string, args ...Expr) Function {
+	return Function{Name: name, Args: args}
+}
+
+func CreateSymbol(name string) Symbol {
+	return Symbol{Name: name}
+}
