@@ -20,7 +20,7 @@ type Expression interface {
 }
 
 type Function struct {
-	Name string
+	Name Symbol
 	Args []Expression
 }
 
@@ -29,7 +29,7 @@ type Symbol struct {
 }
 
 func (f Function) String() string {
-	result := f.Name + "("
+	result := f.Name.String() + "("
 	for i, arg := range f.Args {
 		if i > 0 {
 			result += ", "
@@ -53,7 +53,7 @@ func (s Symbol) Type() ExprType {
 }
 
 func CreateFunction(name string, args ...Expression) Function {
-	return Function{Name: name, Args: args}
+	return Function{Name: Symbol{Name: name}, Args: args}
 }
 
 func CreateSymbol(name string) Symbol {
