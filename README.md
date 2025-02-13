@@ -9,7 +9,7 @@ See below for a basic roadmap.
 ## **TODO**
 
 - [ ] Finish base functionality
-  - [ ] Finish up basic structures
+  - [x] Finish up basic structures
   - [ ] Create pattern matching for rules
   - [ ] Create application of rules
 - [ ] Create cli

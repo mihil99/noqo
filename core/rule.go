@@ -7,8 +7,8 @@ package core
 // Mostly same as in expr.go
 
 type Rule struct {
-	Head Expr
-	Body Expr
+	Head Expression
+	Body Expression
 }
 
 func (r Rule) String() string {

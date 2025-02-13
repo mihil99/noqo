@@ -10,18 +10,18 @@ package core
 type ExprType int
 
 const (
-	Sym ExprType = iota
-	Func
+	ExprType_Sym ExprType = iota
+	ExprType_Func
 )
 
-type Expr interface {
+type Expression interface {
 	String() string
 	Type() ExprType
 }
 
 type Function struct {
 	Name string
-	Args []Expr
+	Args []Expression
 }
 
 type Symbol struct {
@@ -45,17 +45,21 @@ func (s Symbol) String() string {
 }
 
 func (f Function) Type() ExprType {
-	return Func
+	return ExprType_Func
 }
 
 func (s Symbol) Type() ExprType {
-	return Sym
+	return ExprType_Sym
 }
 
-func CreateFunction(name string, args ...Expr) Function {
+func CreateFunction(name string, args ...Expression) Function {
 	return Function{Name: name, Args: args}
 }
 
 func CreateSymbol(name string) Symbol {
 	return Symbol{Name: name}
+}
+
+func CreateArgs(args ...Expression) []Expression {
+	return args
 }

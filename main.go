@@ -6,18 +6,15 @@ import (
 )
 
 func main() {
-	expr := core.Function{
-		Name: "f",
-		Args: []core.Expr{
-			core.Symbol{Name: "x"},
-			core.Function{
-				Name: "g",
-				Args: []core.Expr{
-					core.Symbol{Name: "y"},
-				},
-			},
-		},
-	}
+
+	expr := core.CreateFunction(
+		"f",
+		core.CreateSymbol("x"),
+		core.CreateFunction(
+			"x",
+			core.CreateSymbol("y"),
+		),
+	)
 	fmt.Println("Expression: ", expr.String())
 
 	head := core.CreateFunction("swap",
