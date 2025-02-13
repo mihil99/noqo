@@ -7,9 +7,10 @@ import (
 
 func main() {
 
+	// Basic function creation and printing
 	expr := core.CreateFunction(
 		"f",
-		core.CreateSymbol("x"),
+		core.CreateSymbol("g"),
 		core.CreateFunction(
 			"x",
 			core.CreateSymbol("y"),
@@ -17,6 +18,7 @@ func main() {
 	)
 	fmt.Println("Expression: ", expr.String())
 
+	// Basic rule creation and pringing
 	head := core.CreateFunction("swap",
 		core.CreateFunction("pair",
 			core.CreateSymbol("x"),
@@ -30,6 +32,8 @@ func main() {
 		Head: head,
 		Body: body,
 	}
-
 	fmt.Println("Rule: ", rule.String())
+
+	// Basic application
+	// todo: create pattern matching
 }

@@ -60,6 +60,14 @@ func CreateSymbol(name string) Symbol {
 	return Symbol{Name: name}
 }
 
-func CreateArgs(args ...Expression) []Expression {
-	return args
+func match(lhs Expression, rhs Expression, bindings *map[string]Expression) bool {
+	switch lhs.(type) {
+
+	}
+	return false
+}
+
+func PatternMatch(lhs Expression, rhs Expression) map[string]Expression {
+	bindings := map[string]Expression{}
+	return bindings
 }
